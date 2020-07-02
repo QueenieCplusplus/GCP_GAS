@@ -1,2 +1,2 @@
-# GCP_GAS
+# GCP GAS
 Google App Scripts
