@@ -12,6 +12,10 @@ API 能取得大眾上傳的資訊，也能藉由這些已知的資訊提供服�
 
 最常見的 API 是 FB 和 Google 的登入系統，方便第三方進行功能擴充，對第三方來說，省時省力。
 
+# GAS Runtime
+
+ ChromeV8
+
 # GAS core
 
   class
