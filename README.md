@@ -44,6 +44,110 @@ API 能取得大眾上傳的資訊，也能藉由這些已知的資訊提供服�
  
  其他應用：可連動 Line 機器人或是 TG 機器人，產生自動觸發的罐頭訊息（可能是翻譯器、地圖指南、天氣預測），
          也可連動 gmail 做自動發信。
+         
+         
+# Google Mail Sender 自動寄信
+
+
+     var random_image = {
+       1: 'https://pokemongolive.com/img/posts/pokemonday2020-en.jpg',
+       2: 'https://aissue.com/wp-content/uploads/2018/08/711-Seven-Eleven-Logo.png',
+       3: 'https://www.ctbcbank.com/content/dam/minisite/long/creditcard/foodsedm/assets/images/content5-1/640x420-e2.jpg'
+     };
+
+
+     function getRImage(){
+
+       return UrlFetchApp.fetch(random_image[1]).getBlob().setName('Karens App in 2018');
+
+     }
+
+     function sendEmails(){
+        var ssa = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/{ID}/edit#gid=0');
+        // 請填入 goole sheet ID
+        var sheet = ssa.getSheetByName('sheet1');
+        // 請填入表單編號
+
+        //成員範圍選定略過
+        //var lastRow = sheet.getLastRow();
+        var data = sheet.getRange(1, 1, 1, 1);
+        Logger.log(data.getDisplayValue());
+        var target = data.getDisplayValue();
+        //var data = sheet.getRange(row, column, nunRows, numColumns)
+        sendMail(target); 
+        sheet.getRange(1, 2).setValue('sent ok');
+        SpreadsheetApp.flush();
+
+        //timestamp 欄位略過 作為如下 for loop 的條件判斷器
+
+       /*for(var k=1; k < data.length; ++k){ //k is index number of row
+          var row = data[k];
+          sendMail(row[1]); // row[0] = name; row[1] = mail_add; row[3] = status
+          sheet.getRange(k, 3).setValue('sent ok');
+          SpreadsheetApp.flush();
+        }*/
+
+     }
+
+     /*
+
+     主要文法：
+
+     function sendMail(email_add){
+       MailApp.sendEmail(message);
+
+     }
+     */
+
+     function sendMail(mail_add){
+
+       MailApp.sendEmail({
+         to: mail_add,
+         subject: "Apps that year for 2 years",
+         htmlBody:
+         '<!DOCTYPE html>'+ 
+         '<html>'+   
+            '<body>'+
+
+              'Hi! Dear,<br/>' +
+
+                  '<p> just be happy. App兩週年快樂！寫程式已經三年~ </p><br/>'+
+
+                  '<img src="cid:Img_Url">' +
+
+            '</body>'+  
+         '</html>',
+
+         inlineImages:
+         {
+          Img_Url:getRImage()
+          }
+
+       });
+
+     }
+
+     /*
+
+     範例
+
+     MailApp.sendEmail({
+         to: "recipient@example.com",
+         subject: "Logos",
+         htmlBody: "inline Google Logo<img src='cid:googleLogo'> images! <br>" +
+                   "inline YouTube Logo <img src='cid:youtubeLogo'>",
+         inlineImages:
+           {
+             googleLogo: googleLogoBlob,
+             youtubeLogo: youtubeLogoBlob
+           }
+       });
+
+
+     */
+
+
+
  
  
  
