@@ -34,6 +34,10 @@ API 能取得大眾上傳的資訊，也能藉由這些已知的資訊提供服�
  
  https://docs.google.com/spreadsheets/d/{ID}/edit#gid=0
  
+ # GAS programming 
+ 
+ to see step1 ~ step7
+ 
  
 
 
