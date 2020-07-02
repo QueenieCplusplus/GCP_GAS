@@ -38,7 +38,7 @@ API 能取得大眾上傳的資訊，也能藉由這些已知的資訊提供服�
  
  # GAS programming 
  
- to see step1 ~ step7
+ to see step1 ~ step7 in codebase
  
  # Webhook
  
@@ -47,6 +47,8 @@ API 能取得大眾上傳的資訊，也能藉由這些已知的資訊提供服�
          
          
 # Google Mail Sender 自動寄信
+
+see autoMailSender step 1 ~ 10 in codebase
 
 
      var random_image = {
