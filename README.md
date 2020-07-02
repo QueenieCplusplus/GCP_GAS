@@ -151,7 +151,7 @@ see autoMailSender step 1 ~ 10 in codebase
 
 # Google Calendar 行事曆通知
 
-   （1）進入自己的 gmail, 點選 cloud drive 下拉選單 google table (紫色表單), 進入選項設定的介面。
+    (1）進入自己的 gmail, 點選 cloud drive 下拉選單 google table (紫色表單), 進入選項設定的介面。
 
     (2) 行事曆申請完成時，點選『建立新試算表』，將出現起始時間與結束時間、轉發日曆、發布狀態的欄位。
 
