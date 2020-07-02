@@ -29,5 +29,11 @@ API 能取得大眾上傳的資訊，也能藉由這些已知的資訊提供服�
       class : SpreadsheetApp
       method: openById
       param: 試算表編號
+      
+ # Google Sheet ID
+ 
+ https://docs.google.com/spreadsheets/d/{ID}/edit#gid=0
+ 
+ 
 
 
