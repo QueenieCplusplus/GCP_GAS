@@ -172,6 +172,11 @@ see calendar step 1 ~ 20 in codebase
         CalendarApp.Calendar.createEvent(param1: srting, param2: date, param3: date, param4: obj)
   
   https://developers.google.com/apps-script/reference/calendar/calendar-app#createEvent(String,Date,Date,Object)
+  
+  
+        SpeadsheetApp.Spreadsheet.addMenu(name: string, subMenu: class)
+        
+ https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#addmenuname,-submenus
 
  * codebase
 
