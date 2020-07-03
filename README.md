@@ -175,7 +175,7 @@ see calendar step 1 ~  in codebase
 
  * codebase
  
- 
+
          function openSheet() {
 
           var sheet = SpreadsheetApp.getActiveSpreadsheet();
@@ -191,22 +191,46 @@ see calendar step 1 ~  in codebase
         var sheet = SpreadsheetApp.getActiveSpreadsheet();
         var subSheet = sheet.getSheetByName('list'); 
         //試算表下的表單名稱
-        var range = subSheet.getDataRange();
+        var range = subSheet.getRange(1, 1, 3, 6);
         var values = range.getValues();
 
         function eventTrigger(){
 
           //var LeMeridienHotel = CalendarApp.getCalendarById(id);
-          var LeMeridienHotel = CalendarApp.getCalendarById('');
+          //@group.calendar.google.com
+          var LeMeridienHotel = CalendarApp.getCalendarById('iifuu1tequnp3kna67025hspak@group.calendar.google.com'); // to add google calendar ID, 方才能呼叫方法 createEvent
 
           //Logical control flow hereby
 
+          //var publish = subSheet.getRange(row, column).getValue();
+          //var publish = subSheet.getRange(row, column).getValues(): [];
+          var activity = subSheet.getRange(2, 3).getDisplayValue();
+          var auth = subSheet.getRange(2, 4).getDisplayValue();
+          var publish_status = subSheet.getRange(2, 5).getDisplayValue();
+          if(activity == 'LeMeridienDay' && auth == 'ok' && publish_status == ''){
+
+             Calendar_Addon(LeMeridienHotel);
+
+          }  
+        s
+        }
+
+        function Calendar_Addon(activity){
+
+            var activityName = values[1][2];
+            var start_time = new Date('July 16, 2020 03:00:00 UTC');
+            subSheet.getRange(2, 1).setValue(start_time);
+            var end_time = new Date('July 17, 2020 08:00:00 UTC');
+            subSheet.getRange(2, 2).setValue(end_time);
+            var options = {description: values[1][5]};
+            //方法簽章：CalendarApp.Calendar.createEvent(param1, param2, param3, options);
+            //var activity = activity.createEvent(activityName, start_time, end_time); // to add google calendar ID, 方才能呼叫方法 createEvent
+            var event = activity.createEvent(activityName, start_time, end_time, options);
+            subSheet.getRange(2, 5).setValue('pubished');
         }
 
 
 
- 
- 
- 
+
 
 
