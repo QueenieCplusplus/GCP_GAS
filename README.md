@@ -176,9 +176,10 @@ see calendar step 1 ~  in codebase
  * codebase
  
 
-         function openSheet() {
+        function openSheet() {
 
-          var sheet = SpreadsheetApp.getActiveSpreadsheet();
+          //var sheet = SpreadsheetApp.getActiveSpreadsheet();
+          var sheet = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/{sheet_ID}/edit#gid=0');
           var menuItem = [{name: "觸發事件", functionName: "eventTrigger"}];
           sheet.addMenu('新增行事曆', menuItem);
           //addMenu 追加選單，name 為按鈕名稱，MenuItem 為選單選項
@@ -188,7 +189,8 @@ see calendar step 1 ~  in codebase
         }
 
         //global var 共享變數，放置在方法外（local var）
-        var sheet = SpreadsheetApp.getActiveSpreadsheet();
+        //var sheet = SpreadsheetApp.getActiveSpreadsheet();
+        var sheet = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/{sheet_ID}/edit#gid=0');
         var subSheet = sheet.getSheetByName('list'); 
         //試算表下的表單名稱
         var range = subSheet.getRange(1, 1, 3, 6);
@@ -198,7 +200,7 @@ see calendar step 1 ~  in codebase
 
           //var LeMeridienHotel = CalendarApp.getCalendarById(id);
           //@group.calendar.google.com
-          var LeMeridienHotel = CalendarApp.getCalendarById('Calendar_ID'); // to add google calendar ID, 方才能呼叫方法 createEvent
+          var LeMeridienHotel = CalendarApp.getCalendarById('{calendar_ID}@group.calendar.google.com'); // to add google calendar ID, 方才能呼叫方法 createEvent
 
           //Logical control flow hereby
 
@@ -212,7 +214,6 @@ see calendar step 1 ~  in codebase
              Calendar_Addon(LeMeridienHotel);
 
           }  
-        s
         }
 
         function Calendar_Addon(activity){
@@ -228,9 +229,5 @@ see calendar step 1 ~  in codebase
             var event = activity.createEvent(activityName, start_time, end_time, options);
             subSheet.getRange(2, 5).setValue('pubished');
         }
-
-
-
-
 
 
