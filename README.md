@@ -198,7 +198,7 @@ see calendar step 1 ~  in codebase
 
           //var LeMeridienHotel = CalendarApp.getCalendarById(id);
           //@group.calendar.google.com
-          var LeMeridienHotel = CalendarApp.getCalendarById('iifuu1tequnp3kna67025hspak@group.calendar.google.com'); // to add google calendar ID, 方才能呼叫方法 createEvent
+          var LeMeridienHotel = CalendarApp.getCalendarById('Calendar_ID'); // to add google calendar ID, 方才能呼叫方法 createEvent
 
           //Logical control flow hereby
 
