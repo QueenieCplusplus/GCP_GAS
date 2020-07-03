@@ -166,6 +166,12 @@ see calendar step 1 ~  in codebase
     (6) 步驟五能得到 calendar ID，貼回程式碼的指定位置。
 
     (7) 執行指令，授權應用程式使用試算表內容，
+    
+ * 物件用法
+ 
+        CalendarApp.Calendar.createEvent(param1: srting, param2: date, param3: date, param4: obj)
+  
+  https://developers.google.com/apps-script/reference/calendar/calendar-app#createEvent(String,Date,Date,Object)
 
  * codebase
  
