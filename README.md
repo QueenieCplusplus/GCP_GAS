@@ -151,7 +151,7 @@ see autoMailSender step 1 ~ 10 in codebase
 
 # Google Calendar 行事曆通知
 
-see calendar step 1 ~  in codebase
+see calendar step 1 ~ 20 in codebase
 
     (1）進入自己的 gmail, 點選 cloud drive 下拉選單 google table (紫色表單), 進入選項設定的介面。
 
