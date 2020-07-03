@@ -165,7 +165,38 @@ see autoMailSender step 1 ~ 10 in codebase
 
     (7) 執行指令，授權應用程式使用試算表內容，
 
+ * codebase
  
+ 
+         function openSheet() {
+
+          var sheet = SpreadsheetApp.getActiveSpreadsheet();
+          var menuItem = [{name: "觸發事件", functionName: "eventTrigger"}];
+          sheet.addMenu('新增行事曆', menuItem);
+          //addMenu 追加選單，name 為按鈕名稱，MenuItem 為選單選項
+          //sheet.addMenu(name, subMenus)
+          //name 為UI按鈕名稱，functionName為呼叫方法
+
+        }
+
+        //global var 共享變數，放置在方法外（local var）
+        var sheet = SpreadsheetApp.getActiveSpreadsheet();
+        var subSheet = sheet.getSheetByName('list'); 
+        //試算表下的表單名稱
+        var range = subSheet.getDataRange();
+        var values = range.getValues();
+
+        function eventTrigger(){
+
+          //var LeMeridienHotel = CalendarApp.getCalendarById(id);
+          var LeMeridienHotel = CalendarApp.getCalendarById('');
+
+          //Logical control flow hereby
+
+        }
+
+
+
  
  
  
